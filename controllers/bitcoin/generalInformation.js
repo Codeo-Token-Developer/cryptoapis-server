@@ -2,6 +2,7 @@ const axios = require('axios');
 const baseUrl = process.env.BASE_URL;
 const NETWORK = process.env.NETWORK;
 const API_KEY = process.env.API_KEY;
+
 //=======================================================
      exports.getInfo = (req,res,next) => {
         console.log('Masuk getInfo')
@@ -41,8 +42,10 @@ const API_KEY = process.env.API_KEY;
 
     // Get Block by Height
     exports.getBlockByHeight = (req,res,next) => {
+        console.log(req.params.blockHeight);
+        let BLOCK_HEIGHT = req.params.blockHeight;
         axios({
-            url: '',
+            url: `${baseUrl}/v1/bc/btc/${NETWORK}/blocks/${BLOCK_HEIGHT}`,
             method: 'GET',
             headers: {
                 'ContentType': 'application/json',
@@ -56,6 +59,8 @@ const API_KEY = process.env.API_KEY;
             console.log(err);
         })
     };
+
+    
 
 
 

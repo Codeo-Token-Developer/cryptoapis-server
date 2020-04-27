@@ -8,7 +8,7 @@ Router.use(require('./litecoinRoute'));
 Router.use(require('./tokenRoute'));
 
 //bitCoin
-Router.use(require('./bitcoinRoute'));
+Router.use(require('./bitcoint'));
 
 //ethereum
 Router.use(require('./ethereumRoute'));
